@@ -1,92 +1,129 @@
+import { Google as GoogleIcon } from "@mui/icons-material";
+import {
+  Box,
+  Button,
+  Container,
+  Divider,
+  Link,
+  TextField,
+  Typography,
+} from "@mui/material";
 import React, { useState } from "react";
-import { useDispatch, useSelector } from "react-redux";
-import { registerUser } from "../../../redux/actions/authActions";
 import "./Register.scss";
 
 const Register = () => {
   const [formData, setFormData] = useState({
-    userName: "",
+    username: "",
     password: "",
-    fullName: "",
+    fullname: "",
     phone: "",
     email: "",
-    role: {
-      roleId: 1,
-      roleName: "Customer",
-    },
   });
 
-  const dispatch = useDispatch();
-  const { loading, error, data } = useSelector((state) => state.auth);
-
-  const handleInputChange = (e) => {
+  const handleChange = (e) => {
     const { name, value } = e.target;
-    setFormData({ ...formData, [name]: value });
+    setFormData({
+      ...formData,
+      [name]: value,
+    });
   };
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    dispatch(registerUser(formData));
+    // Handle registration logic (e.g., call an API to create a new user)
+    console.log("Register Data:", formData);
   };
 
   return (
-    <div className="register-container">
-      <form onSubmit={handleSubmit}>
-        <input
-          type="text"
-          name="userName"
-          value={formData.userName}
-          onChange={handleInputChange}
-          placeholder="Nhập tên đăng nhập"
-          required
-        />
-        <input
-          type="password"
-          name="password"
-          value={formData.password}
-          onChange={handleInputChange}
-          placeholder="Nhập mật khẩu"
-          required
-        />
-        <input
-          type="text"
-          name="fullName"
-          value={formData.fullName}
-          onChange={handleInputChange}
-          placeholder="Nhập họ và tên"
-          required
-        />
-        <input
-          type="text"
-          name="phone"
-          value={formData.phone}
-          onChange={handleInputChange}
-          placeholder="Nhập số điện thoại"
-          required
-        />
-        <input
-          type="email"
-          name="email"
-          value={formData.email}
-          onChange={handleInputChange}
-          placeholder="Nhập email"
-          required
-        />
-        <button type="submit" disabled={loading}>
-          {loading ? "Đang đăng ký..." : "Đăng ký"}
-        </button>
+    <Container className="register-container" maxWidth="sm">
+      <Box className="register-box" boxShadow={3} p={4} borderRadius={4}>
+        <Typography variant="h4" align="center" gutterBottom>
+          Đăng Ký
+        </Typography>
+        <form onSubmit={handleSubmit}>
+          <TextField
+            label="Username"
+            name="username"
+            fullWidth
+            variant="outlined"
+            margin="normal"
+            value={formData.username}
+            onChange={handleChange}
+            required
+          />
+          <TextField
+            label="Mật Khẩu"
+            name="password"
+            type="password"
+            fullWidth
+            variant="outlined"
+            margin="normal"
+            value={formData.password}
+            onChange={handleChange}
+            required
+          />
+          <TextField
+            label="Họ và Tên"
+            name="fullname"
+            fullWidth
+            variant="outlined"
+            margin="normal"
+            value={formData.fullname}
+            onChange={handleChange}
+            required
+          />
+          <TextField
+            label="Số Điện Thoại"
+            name="phone"
+            fullWidth
+            variant="outlined"
+            margin="normal"
+            value={formData.phone}
+            onChange={handleChange}
+            required
+          />
+          <TextField
+            label="Email"
+            name="email"
+            type="email"
+            fullWidth
+            variant="outlined"
+            margin="normal"
+            value={formData.email}
+            onChange={handleChange}
+            required
+          />
+          <Button
+            type="submit"
+            variant="contained"
+            color="primary"
+            fullWidth
+            className="register-button"
+          >
+            Đăng Ký
+          </Button>
+        </form>
 
-        {/* Display error message */}
-        {error && <p className="error-message">{error}</p>}
+        <Divider sx={{ my: 2 }}>Hoặc</Divider>
 
-        {/* Display success message */}
-        {data && (
-          <p className="success-message">
-            Registration successful! Welcome, {data.userName}!
-          </p>
-        )}
-      </form>
-    </div>
+        <Button
+          variant="outlined"
+          color="primary"
+          fullWidth
+          className="google-register-button"
+          startIcon={<GoogleIcon />}
+        >
+          Đăng Ký bằng Google
+        </Button>
+
+        <Typography align="center" variant="body2" sx={{ mt: 2 }}>
+          Bạn đã có tài khoản?{" "}
+          <Link href="/login" className="link-hover-effect" variant="body2">
+            Đăng Nhập
+          </Link>
+        </Typography>
+      </Box>
+    </Container>
   );
 };
 
