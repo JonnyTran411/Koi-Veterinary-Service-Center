@@ -12,7 +12,7 @@ import { Link as RouterLink } from "react-router-dom";
 
 const Navigation = () => {
   return (
-    <AppBar position="static">
+    <AppBar position="fixed">
       <Toolbar>
         {/* Biểu tượng Menu */}
         <IconButton
