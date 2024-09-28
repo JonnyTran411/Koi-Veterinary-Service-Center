@@ -5,12 +5,12 @@ import {
   Routes,
   useLocation,
 } from "react-router-dom";
-import ForgetPassword from "./components/auth/forgot-password/ForgetPassword";
-import Login from "./components/auth/login/Login";
-import Register from "./components/auth/register/Register";
 import Footer from "./components/footer/Footer";
-import HomePage from "./components/home/Homepage";
 import Navigation from "./components/navigation/Navigation";
+import ForgetPassword from "./pages/auth/forgot-password/ForgetPassword";
+import Login from "./pages/auth/login/Login";
+import Register from "./pages/auth/register/Register";
+import HomePage from "./pages/home/Homepage";
 
 function App() {
   return (
