@@ -8,6 +8,7 @@ import {
 import ForgetPassword from "./components/auth/forgot-password/ForgetPassword";
 import Login from "./components/auth/login/Login";
 import Register from "./components/auth/register/Register";
+import Footer from "./components/footer/Footer";
 import HomePage from "./components/home/Homepage";
 import Navigation from "./components/navigation/Navigation";
 
@@ -45,7 +46,7 @@ function AppContent() {
       </Routes>
 
       {/* Hiển thị Footer nếu không nằm trong authPaths */}
-      {/* {!shouldHideNavAndFooter && <Footer />} */}
+      {!shouldHideNavAndFooter && <Footer />}
     </>
   );
 }
