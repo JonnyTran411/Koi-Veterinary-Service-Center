@@ -1,0 +1,31 @@
+.root {
+  flex-grow: 1;
+}
+
+.menuButton {
+  margin-right: 16px; // Assuming theme.spacing(2) is 16px
+}
+
+.title {
+  flex-grow: 1;
+}
+
+.navItems {
+  margin-left: 16px; // Assuming theme.spacing(2) is 16px
+}
+
+.appBar {
+  background-color: #3f51b5; // Example color, adjust as needed
+}
+
+.toolbar {
+  display: flex;
+  justify-content: space-between;
+}
+
+.button {
+  color: white;
+  &:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+  }
+}
