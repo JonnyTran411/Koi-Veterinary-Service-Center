@@ -3,8 +3,8 @@ import React from "react";
 import Carousel from "react-material-ui-carousel";
 import "./Carousel.scss";
 
-import koiImages1 from "../../assets/carousel/koi_images1.jpg";
-import koiImages2 from "../../assets/carousel/koi_images2.jpg";
+import koiImages1 from "../../../assets/home/koi_images1.jpg";
+import koiImages2 from "../../../assets/home/koi_images2.jpg";
 
 const items = [
   {

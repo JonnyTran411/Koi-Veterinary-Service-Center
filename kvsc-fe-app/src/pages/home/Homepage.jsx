@@ -1,16 +1,14 @@
 // ./pages/home/HomePage.jsx
 
 import React from "react";
-import CarouselComponent from "../../components/carousel/Carousel";
+import CarouselComponent from "../../components/home/carousel/Carousel";
+import IntroductionSection from "../../components/home/introduction/Introduction";
 
 const HomePage = () => {
   return (
     <>
       <CarouselComponent />
-      <div>
-        <h1>Chào mừng đến với Koi Veterinary Service Center</h1>
-        <p>Đây là trang chủ của trung tâm dịch vụ thú y cá Koi.</p>
-      </div>
+      <IntroductionSection />
       {/* Thêm các component khác */}
     </>
   );
