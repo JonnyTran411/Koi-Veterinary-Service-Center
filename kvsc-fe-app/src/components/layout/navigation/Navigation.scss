@@ -1,0 +1,149 @@
+.navigation {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 1000;
+  background: #001529; // Màu nền mặc định của Ant Design Header
+
+  .nav-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+    height: 64px; // Chiều cao mặc định của Ant Design Header
+  }
+
+  .nav-left {
+    display: flex;
+    align-items: center;
+    flex: 2; // Chiếm 2/3 chiều rộng
+
+    .logo {
+      font-size: 1.5rem;
+      font-weight: bold;
+      margin-right: 20px;
+
+      a {
+        color: #fff;
+        text-decoration: none;
+
+        img {
+          height: 40px;
+        }
+      }
+    }
+
+    .menu.desktop-menu {
+      display: flex;
+      align-items: center;
+      flex: 1; // Chiếm không gian còn lại trong nav-left
+
+      @media (max-width: 768px) {
+        display: none; // Ẩn menu chính trên thiết bị di động
+      }
+
+      .ant-menu-item {
+        transition: background-color 0.3s;
+
+        &:hover {
+          background-color: rgba(255, 255, 255, 0.1);
+        }
+
+        a {
+          color: #fff;
+
+          &:hover {
+            color: #1890ff;
+          }
+        }
+      }
+
+      .ant-menu-item-selected {
+        background-color: #1890ff !important;
+
+        a {
+          color: #fff !important;
+        }
+      }
+    }
+  }
+
+  .nav-right {
+    display: flex;
+    align-items: center;
+    flex: 1; // Chiếm 1/3 chiều rộng
+
+    .menu.user-menu.desktop-menu {
+      display: flex;
+      align-items: center;
+
+      @media (max-width: 768px) {
+        display: none; // Ẩn menu người dùng trên thiết bị di động
+      }
+
+      .ant-menu-item {
+        transition: background-color 0.3s;
+
+        &:hover {
+          background-color: rgba(255, 255, 255, 0.1);
+        }
+
+        a {
+          color: #fff;
+
+          &:hover {
+            color: #1890ff;
+          }
+        }
+      }
+
+      .ant-menu-item-selected {
+        background-color: #1890ff !important;
+
+        a {
+          color: #fff !important;
+        }
+      }
+    }
+
+    .menu-button {
+      display: none;
+
+      @media (max-width: 768px) {
+        display: block; // Hiển thị nút menu trên thiết bị di động
+      }
+    }
+  }
+
+  .mobile-menu {
+    .ant-drawer-content {
+      background: #001529;
+    }
+
+    .ant-drawer-title {
+      color: #fff;
+    }
+
+    .ant-menu-item {
+      color: #fff;
+
+      a {
+        color: #fff;
+
+        &:hover {
+          color: #1890ff;
+        }
+      }
+    }
+
+    .ant-menu-item-selected {
+      background-color: #1890ff !important;
+
+      a {
+        color: #fff !important;
+      }
+    }
+  }
+}
