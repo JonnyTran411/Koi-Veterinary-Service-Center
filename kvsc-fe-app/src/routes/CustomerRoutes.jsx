@@ -1,22 +1,22 @@
-import React, { lazy } from "react";
-import { Route } from "react-router-dom";
+import React from "react";
+import { Route, Routes } from "react-router-dom";
+import ServiceLayouts from "../layouts/services/ServiceLayouts";
+import About from "../pages/about/About";
+import Contact from "../pages/contact/Contact";
+import Homepage from "../pages/home/Homepage";
+import Veterian from "../pages/veterian/Veterian";
 
-const Homepage = lazy(() => import("../pages/home/Homepage"));
-const About = lazy(() => import("../pages/about/About"));
-const Appointment = lazy(() => import("../pages/appointment/Appointment"));
-const Contact = lazy(() => import("../pages/contact/Contact"));
-const Services = lazy(() => import("../pages/services/Services"));
-const Veterian = lazy(() => import("../pages/veterian/Veterian"));
-
-const CustomerRoutes = (
-  <>
-    <Route path="/" element={<Homepage />} />
-    <Route path="about" element={<About />} />
-    <Route path="services" element={<Services />} />
-    <Route path="appointments" element={<Appointment />} />
-    <Route path="veterian" element={<Veterian />} />
-    <Route path="contact" element={<Contact />} />
-  </>
-);
+const CustomerRoutes = () => {
+  return (
+    <Routes>
+      <Route element={<ServiceLayouts />}>
+        <Route path="/" element={<Homepage />} />
+        <Route path="/about" element={<About />} />
+        <Route path="/veterian" element={<Veterian />} />
+        <Route path="/contact" element={<Contact />} />
+      </Route>
+    </Routes>
+  );
+};
 
 export default CustomerRoutes;

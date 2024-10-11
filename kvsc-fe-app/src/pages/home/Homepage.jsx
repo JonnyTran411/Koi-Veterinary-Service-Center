@@ -1,22 +1,25 @@
 // src/components/home/Homepage.jsx
-import React, { lazy, memo, Suspense } from "react";
-import Footer from "../../components/layout/footer/Footer";
-import Navigation from "../../components/layout/navigation/Navigation";
+import React, { memo, Suspense } from "react";
+import CarouselComponent from "../../components/home/carousel/Carousel";
+import IntroductionSection from "../../components/home/introduction/Introduction";
+import News from "../../components/home/news/News";
+import ServicesOverview from "../../components/home/servicesOverviews/Services";
+import Testimonials from "../../components/home/testimonials/Testimonials";
+import Veterian from "../../components/home/veterian/Veterian";
 import LoadingPage from "../loading/LoadingPage";
 import "./Homepage.scss";
-
-const HeroSection = lazy(() =>
-  import("../../components/home/hero-section/HeroSection")
-);
 
 const Homepage = memo(() => {
   return (
     <Suspense fallback={<LoadingPage />}>
-      <Navigation />
       <div className="homepage">
-        <HeroSection />
+        <CarouselComponent />
+        <IntroductionSection />
+        <ServicesOverview />
+        <Veterian />
+        <Testimonials />
+        <News />
       </div>
-      <Footer />
     </Suspense>
   );
 });
