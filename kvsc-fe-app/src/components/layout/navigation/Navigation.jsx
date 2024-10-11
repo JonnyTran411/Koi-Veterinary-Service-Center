@@ -34,11 +34,11 @@ const Navigation = () => {
           <Menu.Item key="/services/online-consultation">
             <Link to="/services/online-consultation">Tư vấn trực tuyến</Link>
           </Menu.Item>
-          <Menu.Item key="/services/home-checkup">
-            <Link to="/services/home-checkup">Kiểm tra tại nhà</Link>
+          <Menu.Item key="/services/home-consultation">
+            <Link to="/services/home-consultation">Kiểm tra tại nhà</Link>
           </Menu.Item>
-          <Menu.Item key="/services/treatment">
-            <Link to="/services/treatment">Điều trị bệnh</Link>
+          <Menu.Item key="/services/disease-treatment">
+            <Link to="/services/disease-treatment">Điều trị bệnh</Link>
           </Menu.Item>
         </Menu.SubMenu>
 
