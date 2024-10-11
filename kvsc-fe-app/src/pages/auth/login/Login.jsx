@@ -76,7 +76,7 @@ const Login = () => {
               label="Remember me"
             />
             <Link
-              href="/forgot-password"
+              href="/auth/forget-password"
               className="link-hover-effect"
               variant="body2"
             >
@@ -108,7 +108,11 @@ const Login = () => {
 
         <Typography align="center" variant="body2" sx={{ mt: 2 }}>
           Bạn chưa có tài khoản?{" "}
-          <Link href="/register" className="link-hover-effect" variant="body2">
+          <Link
+            href="/auth/register"
+            className="link-hover-effect"
+            variant="body2"
+          >
             Đăng ký ngay
           </Link>
         </Typography>

@@ -1,21 +1,18 @@
-import { Layout } from "antd";
 import React from "react";
 import { Outlet } from "react-router-dom";
-// import "./CustomerLayout.scss";
-import Footer from "../layout/footer/Footer";
-import Navigation from "../layout/navigation/Navigation";
-
-const { Content } = Layout;
+import Footer from "./footer/Footer";
+import Navigation from "./navigation/Navigation";
 
 const CustomerLayout = () => {
   return (
-    <Layout>
+    <>
       <Navigation />
-      <Content style={{ padding: "80px 0px 0px 0px" }}>
+      <main>
         <Outlet />
-      </Content>
+      </main>
       <Footer />
-    </Layout>
+    </>
   );
 };
+
 export default CustomerLayout;

@@ -118,7 +118,11 @@ const Register = () => {
 
         <Typography align="center" variant="body2" sx={{ mt: 2 }}>
           Bạn đã có tài khoản?{" "}
-          <Link href="/login" className="link-hover-effect" variant="body2">
+          <Link
+            href="/auth/login"
+            className="link-hover-effect"
+            variant="body2"
+          >
             Đăng Nhập
           </Link>
         </Typography>

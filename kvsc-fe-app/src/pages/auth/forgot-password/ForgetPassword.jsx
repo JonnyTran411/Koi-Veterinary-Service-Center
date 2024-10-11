@@ -56,7 +56,11 @@ const ForgetPassword = () => {
         </form>
         <Typography align="center" variant="body2" sx={{ mt: 2 }}>
           Nhớ mật khẩu?{" "}
-          <Link href="/login" className="link-hover-effect" variant="body2">
+          <Link
+            href="/auth/login"
+            className="link-hover-effect"
+            variant="body2"
+          >
             Đăng Nhập
           </Link>
         </Typography>
