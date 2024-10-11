@@ -1,47 +1,62 @@
-import { Button, Layout, Menu } from "antd";
-import SubMenu from "antd/es/menu/SubMenu";
+import { Button, Menu } from "antd";
 import React from "react";
+import { Link, useLocation } from "react-router-dom";
 import "./Navigation.scss";
 
-const { Header } = Layout;
-
 const Navigation = () => {
+  const location = useLocation(); // Lấy đường dẫn hiện tại
+  const selectedKey = location.pathname; // Lấy pathname hiện tại để làm key cho menu
+
   return (
-    <Layout>
-      <Header className="header">
-        <div className="logo">
-          {/* Thay thế bằng logo thật nếu có */}
-          <img src="logo192.png" alt="Koi Veterinary Center" />
-        </div>
-        <Menu
-          theme="light"
-          mode="horizontal"
-          defaultSelectedKeys={["1"]}
-          className="menu"
-        >
-          <Menu.Item key="1">Trang chủ</Menu.Item>
-          <Menu.Item key="2">Giới thiệu</Menu.Item>
-          <Menu.Item key="3">Dịch vụ</Menu.Item>
+    <div className="navigation">
+      {/* Logo */}
+      <div className="logo">
+        <img
+          src="/logo192.png"
+          alt="Koi Veterinary Center"
+          style={{ height: "40px" }}
+        />
+      </div>
 
-          {/* SubMenu cho Đặt lịch hẹn */}
-          <SubMenu key="SubMenu" title="Đặt lịch hẹn">
-            <Menu.Item key="4">Tư vấn trực tuyến</Menu.Item>
-            <Menu.Item key="5">Kiểm tra tại nhà</Menu.Item>
-            <Menu.Item key="6">Điều trị bệnh</Menu.Item>
-          </SubMenu>
+      {/* Menu */}
+      <Menu mode="horizontal" selectedKeys={[selectedKey]} className="menu">
+        <Menu.Item key="/">
+          <Link to="/">Trang chủ</Link>
+        </Menu.Item>
+        <Menu.Item key="/about">
+          <Link to="/about">Giới thiệu</Link>
+        </Menu.Item>
+        <Menu.Item key="/services">
+          <Link to="/services">Dịch vụ</Link>
+        </Menu.Item>
 
-          <Menu.Item key="7">Hỗ trợ</Menu.Item>
-        </Menu>
-        <div className="buttons">
-          <Button type="default" className="register-btn">
-            Đăng ký
-          </Button>
-          <Button type="primary" className="login-btn">
-            Đăng nhập
-          </Button>
-        </div>
-      </Header>
-    </Layout>
+        <Menu.SubMenu key="/services/appointment" title="Đặt lịch hẹn">
+          <Menu.Item key="/services/online-consultation">
+            <Link to="/services/online-consultation">Tư vấn trực tuyến</Link>
+          </Menu.Item>
+          <Menu.Item key="/services/home-checkup">
+            <Link to="/services/home-checkup">Kiểm tra tại nhà</Link>
+          </Menu.Item>
+          <Menu.Item key="/services/treatment">
+            <Link to="/services/treatment">Điều trị bệnh</Link>
+          </Menu.Item>
+        </Menu.SubMenu>
+
+        <Menu.Item key="/support">
+          <Link to="/support">Hỗ trợ</Link>
+        </Menu.Item>
+      </Menu>
+
+      {/* Nút Đăng ký và Đăng nhập */}
+      <div className="auth-buttons">
+        <Button type="default" className="register-btn">
+          <Link to="/register">Đăng ký</Link>
+        </Button>
+        <Button type="primary" className="login-btn">
+          <Link to="/login">Đăng nhập</Link>
+        </Button>
+      </div>
+    </div>
   );
 };
 
