@@ -5,6 +5,7 @@ import LoadingPage from "../pages/loading/LoadingPage";
 import AdminRoutes from "./AdminRoutes";
 import CustomerRoutes from "./CustomerRoutes";
 import ServicesRoutes from "./ServiceRoutes";
+import VeterinarianRoutes from "./VeterinarianRoutes";
 
 const NotFound = lazy(() => import("../pages/notfound/NotFound"));
 
@@ -16,6 +17,9 @@ const AppRoutes = memo(() => (
 
       {/* Route cho dịch vụ */}
       <Route path="/services/*" element={<ServicesRoutes />} />
+
+      {/* Đường dẫn cho Bác sĩ thú y */}
+      <Route path="/veterinarian/*" element={<VeterinarianRoutes />} />
 
       {/* Các route dành cho Auth
       <Route path="/auth/*" element={<AuthLayout />}>
