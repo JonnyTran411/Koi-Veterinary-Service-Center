@@ -1,6 +1,7 @@
 import React from "react";
 import { Route, Routes } from "react-router-dom";
 import VeterinarianLayout from "../layouts/veterian/VeterianLayout";
+import AppointmentDetails from "../pages/veterinarian/appointment/details/AppointmentDetails";
 import VeterinarianAppointments from "../pages/veterinarian/appointment/VeterinarianAppointments";
 import VeterinarianProfile from "../pages/veterinarian/profile/VeterinarianProfile";
 import VeterinarianSchedule from "../pages/veterinarian/schedule/VeterinarianSchedule";
@@ -10,6 +11,7 @@ const VeterinarianRoutes = () => {
     <Routes>
       <Route path="/" element={<VeterinarianLayout />}>
         <Route path="appointments" element={<VeterinarianAppointments />} />
+        <Route path="appointments/:id" element={<AppointmentDetails />} />
         <Route path="profile" element={<VeterinarianProfile />} />
         <Route path="schedule" element={<VeterinarianSchedule />} />
       </Route>

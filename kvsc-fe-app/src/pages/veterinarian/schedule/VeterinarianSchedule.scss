@@ -1,0 +1,33 @@
+.veterinarian-schedule {
+  padding: 20px;
+
+  h2 {
+    font-size: 24px;
+    margin-bottom: 20px;
+  }
+
+  .ant-calendar {
+    background-color: white;
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.2);
+  }
+
+  .events {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+
+    li {
+      margin-bottom: 5px;
+    }
+  }
+
+  .ant-badge-status-success {
+    background-color: #52c41a;
+  }
+
+  .ant-badge-status-warning {
+    background-color: #faad14;
+  }
+}
